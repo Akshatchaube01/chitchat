@@ -2,6 +2,7 @@ import React from "react";
 import { IconLanguage } from "@tabler/icons-react";
 
 const LanguageSelector = ({selectedLanguage, setSelectedLanguage,languages})=>{
+    return(
     <span className="cursor-pointer rounded-full space-x-1 pl-2 bg-black flex items-center flex-row">
         <IconLanguage size={20}/>
         <select
@@ -9,14 +10,15 @@ const LanguageSelector = ({selectedLanguage, setSelectedLanguage,languages})=>{
             onChange={(e)=> setSelectedLanguage(e.target.value)}
             className="bg-black flex flex-row rounded-full py-1 text-white"
         >
-            {language.map((language)=>{
-                <option key={language} value={language}>
-                    {language}
+            {languages.map((languages)=>{
+                <option key={languages} value={languages}>
+                    {languages}
                 </option>
             })}
         </select>
 
     </span>
+    )
 }
 
 
